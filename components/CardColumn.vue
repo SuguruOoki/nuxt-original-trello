@@ -30,8 +30,5 @@ $gap-1: 8px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  .cards {
-    margin: $gap-1;
-  }
 }
 </style>
