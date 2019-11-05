@@ -9,6 +9,14 @@
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
 export default {
+  head: {
+    htmlAttrs: {
+      class: 'html-style'
+    },
+    bodyAttrs: {
+      class: 'body-style'
+    }
+  },
   components: {
     Header,
     Footer
@@ -23,7 +31,7 @@ $global-font: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
 $default-font-size: 16px;
 $default-font-color: #ffffff;
 
-html {
+.html-style {
   color: $default-font-color;
   font-family: $global-font;
   font-size: $default-font-size;
@@ -33,8 +41,15 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  body {
-    background-color: #0079bf;
-  }
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.body-style {
+  top: 0;
+  background-color: #0079bf;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 </style>
