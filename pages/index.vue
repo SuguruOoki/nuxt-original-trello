@@ -1,14 +1,10 @@
 <template>
   <div class="container">
-    <div class="header">
-      <h3 class="title">nuxt-trello</h3>
-    </div>
     <div class="content">
       <div class="board-wrapper">
         <CardColumn></CardColumn>
       </div>
     </div>
-    <div class="footer">footer</div>
   </div>
 </template>
 
@@ -25,7 +21,7 @@ export default {
 <style>
 .container {
   display: flex;
-  background-color: #0079bf;
+  background-color: transparent;
   flex-direction: column;
   justify-content: center;
   align-items: center;
