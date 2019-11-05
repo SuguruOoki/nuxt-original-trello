@@ -1,14 +1,18 @@
 <template>
   <div>
-    <nuxt />
+    <nuxt/>
   </div>
 </template>
 
-<style>
+<style lang="scss">
+$global-font: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+$default-font-size: 16px;
+
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
+  font-family: $global-font;
+  font-size: $default-font-size;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
