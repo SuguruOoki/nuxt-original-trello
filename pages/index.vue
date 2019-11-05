@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <div class="board-wrapper">
-        <CardColumn></CardColumn>
+        <CardColumn/>
       </div>
     </div>
   </div>
