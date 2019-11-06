@@ -1,5 +1,6 @@
 <template>
   <div class="container-card">
+    <div>{{ ColumnTitle }}</div>
     <div v-for="key in sample" :key="key" class="cards">
       <Card/>
     </div>
@@ -8,6 +9,12 @@
 <script>
 import Card from './Card.vue'
 export default {
+  props: {
+    ColumnTitle: {
+      type: String,
+      require: true
+    }
+  },
   components: {
     Card
   },

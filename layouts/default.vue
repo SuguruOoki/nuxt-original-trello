@@ -47,6 +47,7 @@ $default-font-color: #ffffff;
 }
 .body-style {
   top: 0;
+  background: rgba(0, 0, 0, 0.15);
   background-color: #0079bf;
   height: 100%;
   margin: 0;

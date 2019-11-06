@@ -1,19 +1,15 @@
 <template>
   <div class="container">
-    <div class="content">
-      <div class="board-wrapper">
-        <CardColumn/>
-      </div>
-    </div>
+    <BoardBody/>
   </div>
 </template>
 
 <script>
-import CardColumn from '~/components/CardColumn.vue'
+import BoardBody from '~/components/BoardBody.vue'
 
 export default {
   components: {
-    CardColumn
+    BoardBody
   }
 }
 </script>
