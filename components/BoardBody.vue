@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div v-for="key in cardContent" :key="key.id" class="board-wrapper">
-      <CardColumn :title="title"/>
+      <CardColumn :columnTitle="key.title"/>
     </div>
   </div>
 </template>
