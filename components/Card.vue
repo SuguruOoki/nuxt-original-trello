@@ -1,6 +1,18 @@
 <template>
-  <div class="card">card</div>
+  <div class="card">{{ cardContent }}</div>
 </template>
+
+<script>
+export default {
+  props: {
+    cardContent: {
+      type: String,
+      require: true,
+      default: ''
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .card {
