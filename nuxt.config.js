@@ -61,7 +61,21 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
+  ],
+  axios: {
+    proxy: true
+  },
+  proxy:{
+    '/connpass': {
+      target: 'https://connpass.com/api/v1/event',
+      pathRewrite: {
+        '^/connpass': '/'
+      }
+    }
+  },
   /*
    ** Build configuration
    */
