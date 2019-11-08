@@ -1,16 +1,13 @@
 <template>
   <div class="container">
-    <BoardBody />
   </div>
 </template>
 
 <script>
-import BoardBody from '~/components/BoardBody.vue'
-// import CardSearch from '~/components/CardSearch.vue'
 
 export default {
-  components: {
-    BoardBody
+  props: {
+    
   }
 }
 </script>

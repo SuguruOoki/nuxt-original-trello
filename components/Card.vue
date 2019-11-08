@@ -6,7 +6,7 @@
 export default {
   props: {
     cardContent: {
-      type: String,
+      type: Number,
       require: true,
       default: ''
     }
