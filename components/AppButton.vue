@@ -17,7 +17,7 @@ export default {
     width: {
       type: String,
       require: false,
-      default: '100%'
+      default: ''
     }
   },
   computed: {
