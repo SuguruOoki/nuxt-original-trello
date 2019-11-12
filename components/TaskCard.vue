@@ -20,5 +20,6 @@ export default {
   color: #172b4d;
   border-radius: 4px;
   padding: 12px 16px;
+  min-height: 16px;
 }
 </style>
