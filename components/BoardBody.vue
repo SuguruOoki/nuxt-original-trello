@@ -1,14 +1,6 @@
 <template>
-  <div class="content">
-    <div>
-      <!-- <div id='example-3'>
-        <input type="checkbox" id="todo" value="TODO" v-model="checkedColumns" @click="handleSearch">
-        <label for="todo">TODO</label>
-        <input type="checkbox" id="will" value="WILL" v-model="checkedColumns" @click="handleSearch">
-        <label for="will">WILL</label>
-        <br>
-        <span>Checked Columns: {{ checkedColumns }}</span>
-      </div> -->
+  <div class="board-body-content">
+    <div class="cardcolumn-search-flex">
       <div v-for="(cardContent, i) in cardContents" :key="i">
         <input
           :id="'cardContent' + i"
@@ -20,8 +12,8 @@
         <label :for="'cardContent' + i">{{ cardContent }}</label>
       </div>
     </div>
-    <div class="board-wrapper">
-      <div v-for="key in cardContents" :key="key.id" class="card-column-wrapper">
+    <div class="task-cards-wrapper">
+      <div v-for="key in cardContents" :key="key.id" class="task-cards-content">
         <TaskCardColumn :columnTitle="key"/>
       </div>
     </div>
@@ -75,32 +67,38 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $gap-1: 8px;
 $gap-2: 16px;
 
-.content {
-  width: 100%;
+.board-body-content {
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  .board-wrapper {
+
+  .cardcolumn-search-flex {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    margin: $gap-2;
-    .card-column-wrapper {
-      margin: 0 $gap-2;
-    }
   }
-  .flex {
-    display: flex;
-    flex-direction: column;
+}
+.task-cards-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 24px;
+  .task-cards-content {
+    max-width: 300px;
   }
 }
 
+
 .title {
   color: #ffffff;
+}
+
+@media screen and (max-width: 768px){
+  .content {
+    width: 80%;
+  }
 }
 </style>

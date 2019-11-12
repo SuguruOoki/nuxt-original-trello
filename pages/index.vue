@@ -20,8 +20,8 @@ export default {
   display: flex;
   background-color: transparent;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  /* align-items: center; */
   text-align: center;
 }
 

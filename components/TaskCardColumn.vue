@@ -1,16 +1,17 @@
 <template>
-  <div class="container-card">
+  <div class="container-card-column">
     <div>
       <h3>{{ columnTitle }}</h3>
     </div>
-    <div v-for="key in sample" :key="key" class="flex-column card-gap">
-      <div>
+    <div v-for="key in sample" :key="key" class="card-gap">
+      <div class="task-card-flex-row">
         <TaskCard :cardContent="key"/>
+        <AppButton buttonText="更新" backgroundColor="orange" width="10%"/>
+        <AppButton buttonText="削除"  width="10%"/>
       </div>
-      <div class="flex-row">
-        <AppButton buttonText="更新" backgroundColor="orange"/>
-        <AppButton buttonText="削除" />
-      </div>
+    </div>
+    <div class="button-add">
+      <AppButton buttonText="追加" backgroundColor="green" />
     </div>
   </div>
 </template>
@@ -37,25 +38,25 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $gap-1: 8px;
 
-.container-card {
+.container-card-column {
   background-color: #ebecf0;
   border-radius: 4px;
   min-height: 100px;
-  min-width: 80px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
-.flex-column {
-  display: flex;
-}
-.flex-row {
+.task-card-flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.button-add {
+  margin: 12px;
 }
 
 .card-gap {

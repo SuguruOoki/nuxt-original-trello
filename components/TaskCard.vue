@@ -21,5 +21,6 @@ export default {
   border-radius: 4px;
   padding: 12px 16px;
   min-height: 16px;
+  max-width: 40%;
 }
 </style>
