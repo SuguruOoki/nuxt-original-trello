@@ -15,24 +15,25 @@
           type="checkbox"
           :value="cardContent"
           v-model="checkedColumns"
+          @click="handleSearch"
         >
         <label :for="'cardContent' + i">{{ cardContent }}</label>
       </div>
     </div>
     <div class="board-wrapper">
-      <div v-for="key in selectedColumns" :key="key.id" class="card-column-wrapper">
-        <CardColumn :columnTitle="key.title"/>
+      <div v-for="key in cardContents" :key="key.id" class="card-column-wrapper">
+        <TaskCardColumn :columnTitle="key"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CardColumn from '~/components/CardColumn.vue'
+import TaskCardColumn from '~/components/TaskCardColumn.vue'
 
 export default {
   components: {
-    CardColumn
+    TaskCardColumn
   },
   data() {
     return {
@@ -55,9 +56,10 @@ export default {
   },
   methods: {
     handleSearch() {
-      this.selectedColumns = this.cardContents.filter((cardContent) => {
-        return cardContent === 
-      })
+      console.log(this.checkedColumns)
+      // this.selectedColumns = this.cardContents.filter((cardContent) => {
+      //   return cardContent === this.card
+      // })
 
       // if (this.checkedColumns === []) return firstCardContents
 
