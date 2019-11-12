@@ -1,5 +1,5 @@
 <template>
-  <div class="button" :style="styles">{{ buttonText }}</div>
+  <div class="button" @click="handleClick" :style="styles">{{ buttonText }}</div>
 </template>
 
 <script>
@@ -18,6 +18,18 @@ export default {
       type: String,
       require: false,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      require: false,
+      default: false
+    }
+  },
+  methods: {
+    handleClick: function(e) {
+      console.log('clickしているのである')
+
+      this.$emit('click');
     }
   },
   computed: {
