@@ -5,17 +5,16 @@
       <h3>{{ columnTitle }}</h3>
     </div>
     <div v-for="key in sample" :key="key.id" class="card-gap">
-      <div class="task-card-flex-row">
+      <div class="task-card-flex-row" :class="key">
         <TaskCard :cardContent="key"/>
         <AppButton buttonText="更新" backgroundColor="orange" width="10%"/>
-        <AppButton buttonText="削除"  width="10%"/>
+        <AppButton buttonText="削除" @click="handleDeleteTask(key)" width="10%"/>
       </div>
     </div>
     <div class="button-add">
         <span>コメント</span>
         <input type="text" v-model.lazy="taskInputContent" />
-        <!-- <AppButton buttonText="追加" @click="handleInputStatus" backgroundColor="green" /> -->
-        <AppButton buttonText="追加" @click="handleAddTask(taskInputContent)"  backgroundColor="blue" />
+        <AppButton buttonText="追加" @click="handleAddTask(taskInputContent)"  backgroundColor="green" />
     </div>
   </div>
 </template>
@@ -31,10 +30,16 @@ export default {
     }
   },
   methods: {
-    handleAddTask: function() {
+    handleAddTask() {
       if (this.taskInputContent !== '') {
         console.log(this.taskInputContent)
         this.sample.push(this.taskInputContent)
+      }
+    },
+    handleDeleteTask(key) {
+      if (key !== '') {
+        console.log(key)
+        this.sample = this.sample.filter(n => n !== key);
       }
     },
     handleInputStatus() {
